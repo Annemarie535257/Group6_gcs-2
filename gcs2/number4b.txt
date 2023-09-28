@@ -1,6 +1,9 @@
 #!/bin/bash
-
 # Check if the text file exists
+if [ ! -f number4bN.txt ]; then
+    echo "Error: folder_names.txt not found."
+    exit 1
+fi
 
 # Read each line from the file and create a folder
 while IFS= read -r folder_name
@@ -12,4 +15,4 @@ do
     else
         echo "Folder '$folder_name' already exists."
     fi
-done < folder_names.txt
+done < number4bN.txt
