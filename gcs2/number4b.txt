@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Check if the text file exists
+
+# Read each line from the file and create a folder
+while IFS= read -r folder_name
+do
+    # Check if the folder already exists
+    if [ ! -d "$folder_name" ]; then
+        mkdir "$folder_name"
+        echo "Created folder: $folder_name"
+    else
+        echo "Folder '$folder_name' already exists."
+    fi
+done < folder_names.txt
